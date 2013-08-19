@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title>remote-CDU</title>
+<link rel="stylesheet" type="text/css" href="cdu.css">
+<script type="text/javascript">
+var xmlhttp;
+var xmlhttp2;
+if (window.XMLHttpRequest) {
+  // code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  xmlhttp2=new XMLHttpRequest();
+} else {
+  // code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+function reloadDU() {
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("CDU").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("GET", "cdu.html", true);
+  xmlhttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2005 00:00:00 GMT");
+  xmlhttp.send();
+}
+
+function sendButtonPress(button) {
+  xmlhttp2.open("GET", button, true);
+  xmlhttp2.send();
+}
+
+var night = 0;
+function toggleNight() {
+    if (night == 0) {
+        document.getElementById('Image-Maps_6201110101627119').src='images/remote-cdu-night.png';
+        night = 1;
+    } else {
+        document.getElementById('Image-Maps_6201110101627119').src='images/remote-cdu.png';
+        night = 0;
+    }
+}
+
+function detectiPad() {
+    var isiPad = navigator.userAgent.match(/iPad/i) != null;
+    if (isiPad) {
+        document.ontouchmove = function(e){ e.preventDefault(); };
+        document.body.style.overflow = 'hidden';
+        document.getElementById('container').style.overflow = 'hidden';
+    }
+}
+setInterval(reloadDU, 100);
+</script>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body style="width:459px; height:1004px; top:0; left:0; padding:0; margin:0; border:0; -webkit-perspective: 200; -webkit-perspective-origin: 80% 35%; -moz-perspective: 200; -moz-perspective-origin: 80% 35%;" onload="detectiPad();">
+<div style="width:768px;  height:1004px; top:0; left:0; padding:0; margin:0; border:0;" id="container">
+<img id="Image-Maps_6201110101627119" src="images/remote-cdu.png" usemap="#Image-Maps_6201110101627119" border="0" width="768" height="1004" alt="" />
+<map id="_Image-Maps_6201110101627119" name="Image-Maps_6201110101627119">
+
+
+<!--
+<area shape="rect" coords="112,161,160,191" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="113,208,161,238" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="113,256,161,286" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="114,305,162,335" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="115,353,163,383" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="116,402,164,432" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="607,148,655,178" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="610,193,658,223" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="614,240,662,270" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="616,287,664,317" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="620,335,668,365" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="624,383,672,413" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="584, 18,640, 80" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords=" 92,536,164,584" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="170,534,242,582" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="248,531,320,579" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="328,527,400,575" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="408,522,480,570" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="484,522,556,570" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="563,520,635,568" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="641,516,713,564" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords=" 92,593,164,641" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="172,590,244,638" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="250,587,322,635" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="331,583,403,631" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="411,579,483,627" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="487,578,559,626" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="567,574,639,622" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="643,569,715,617" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords=" 93,650,165,698" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="172,646,244,694" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="255,643,327,691" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords=" 94,710,166,758" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="174,705,246,753" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="255,701,327,749" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="362,648,412,697" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="424,645,474,694" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="486,643,536,692" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="545,640,595,689" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="609,639,659,688" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="364,704,414,753" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="427,701,477,750" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="488,699,538,748" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="549,696,599,745" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="612,694,662,743" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="367,763,417,812" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="430,758,480,807" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="491,758,541,807" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="552,753,602,802" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="615,750,665,799" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="368,821,418,870" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="433,817,483,866" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="494,814,544,863" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="555,813,605,862" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="619,808,669,857" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="369,877,419,926" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="435,875,485,924" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="498,873,548,922" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="559,871,609,920" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="623,867,673,916" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="373,939,423,988" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="438,935,488,984" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="499,934,549,983" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="561,929,611,978" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="627,926,677,975" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="158,773,208,822" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="223,769,273,818" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="286,766,336,815" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="159,829,209,878" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="224,827,274,876" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="289,824,339,873" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="160,886,210,935" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="226,882,276,931" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="289,879,339,928" href="http://www.image-maps.com/" alt="" title=""    />
+
+<area shape="rect" coords="162,948,212,997" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="227,942,277,991" href="http://www.image-maps.com/" alt="" title=""    />
+<area shape="rect" coords="293,939,343,988" href="http://www.image-maps.com/" alt="" title=""    />
+
+-->
+
+
+
+<area shape="rect" coords="112,161,160,191" href="#" alt="LLSK1" title="LLSK1" onclick="sendButtonPress('LLSK1')" />
+<area shape="rect" coords="113,208,161,238" href="#" alt="LLSK2" title="LLSK2" onclick="sendButtonPress('LLSK2')" />
+<area shape="rect" coords="113,256,161,286" href="#" alt="LLSK3" title="LLSK3" onclick="sendButtonPress('LLSK3')" />
+<area shape="rect" coords="114,305,162,335" href="#" alt="LLSK4" title="LLSK4" onclick="sendButtonPress('LLSK4')" />
+<area shape="rect" coords="115,353,163,383" href="#" alt="LLSK5" title="LLSK5" onclick="sendButtonPress('LLSK5')" />
+<area shape="rect" coords="116,402,164,432" href="#" alt="LLSK6" title="LLSK6" onclick="sendButtonPress('LLSK6')" />
+
+
+<area shape="rect" coords="607,148,655,178" href="#" alt="RLSK1" title="RLSK1" onclick="sendButtonPress('RLSK1')" />
+<area shape="rect" coords="610,193,658,223" href="#" alt="RLSK2" title="RLSK2" onclick="sendButtonPress('RLSK2')" />
+<area shape="rect" coords="614,240,662,270" href="#" alt="RLSK3" title="RLSK3" onclick="sendButtonPress('RLSK3')" />
+<area shape="rect" coords="616,287,664,317" href="#" alt="RLSK4" title="RLSK4" onclick="sendButtonPress('RLSK4')" />
+<area shape="rect" coords="620,335,668,365" href="#" alt="RLSK5" title="RLSK5" onclick="sendButtonPress('RLSK5')" />
+<area shape="rect" coords="624,383,672,413" href="#" alt="RLSK6" title="RLSK6" onclick="sendButtonPress('RLSK6')" />
+
+
+<area shape="rect" coords=" 92,536,164,584" href="#" alt="MSG" title="MSG"  onclick="sendButtonPress('MSG')"   />
+<area shape="rect" coords="170,534,242,582" href="#" alt="DIR" title="DIR"   onclick="sendButtonPress('DIR')"  />
+<area shape="rect" coords="248,531,320,579" href="#" alt="FLPN" title="FPLN"   onclick="sendButtonPress('FPLN')"  />
+<area shape="rect" coords="328,527,400,575" href="#" alt="DEPARR" title="DEPARR"   onclick="sendButtonPress('DEPARR')"  />
+<area shape="rect" coords="408,522,480,570" href="#" alt="HOLD" title="HOLD"   onclick="sendButtonPress('HOLD')"  />
+<area shape="rect" coords="484,522,556,570" href="#" alt="ARROWUP" title="ARROWUP"   onclick="sendButtonPress('ARROWUP')"  />
+<area shape="rect" coords="563,520,635,568" href="#" alt="PREVPAGE" title="PREVPAGE"   onclick="sendButtonPress('PREVPAGE')"  />
+<area shape="rect" coords="641,516,713,564" href="#E" alt="NEXTPAGE" title="NEXTPAGE"   onclick="sendButtonPress('NEXTPAGE')"  />
+
+<area shape="rect" coords=" 92,593,164,641" href="#" alt="INDEX" title="INDEX"   onclick="sendButtonPress('INDEX')"  />
+<area shape="rect" coords="172,590,244,638" href="#" alt="FIX" title="FIX"  onclick="sendButtonPress('FIX')"   />
+<area shape="rect" coords="250,587,322,635" href="#" alt="LEGS" title="LEGS"   onclick="sendButtonPress('LEGS')"  />
+<area shape="rect" coords="331,583,403,631" href="#" alt="SECFPLN" title="SECFPLN"   onclick="sendButtonPress('SECFPLN')"  />
+<area shape="rect" coords="411,579,483,627" href="#" alt="VNAV" title="VNAV"   onclick="sendButtonPress('VNAV')"  />
+<area shape="rect" coords="487,578,559,626" href="#" alt="ARROWDN" title="ARROWDN"   onclick="sendButtonPress('ARROWDN')"  />
+<area shape="rect" coords="567,574,639,622" href="#" alt="MCDUMENU" title="MCDUMENU"   onclick="sendButtonPress('MCDUMENU')"  />
+<area shape="rect" coords="643,569,715,617" href="#" alt="EXEC" title="EXEC"   onclick="sendButtonPress('EXEC')"  />
+
+<area shape="rect" coords=" 93,650,165,698"   href="#" alt="RADIO" title="RADIO"   onclick="sendButtonPress('RADIO')"  />
+<area shape="rect" coords=" 94,710,166,758"   href="#" alt="MFDDATA" title="MFDDATA"   onclick="sendButtonPress('MFDDATA')"  />
+
+<area shape="rect" coords="172,646,244,694"  href="#" alt="PROG" title="PROG"   onclick="sendButtonPress('PROG')"  />
+<area shape="rect" coords="174,705,246,753"  href="#" alt="MFDMENU" title="MFDMENU"   onclick="sendButtonPress('MFDMENU')"  />
+
+<area shape="rect" coords="255,643,327,691" href="#" alt="PERF" title="PERF"   onclick="sendButtonPress('PERF')"  />
+<area shape="rect" coords="255,701,327,749" href="#" alt="MFDADV" title="MFDADV"   onclick="sendButtonPress('MFDADV')"  />
+
+
+<area shape="rect" coords="158,773,208,822" href="#" alt="1" title="1"   onclick="sendButtonPress('1')"  />
+<area shape="rect" coords="223,769,273,818" href="#" alt="2" title="2"  onclick="sendButtonPress('2')"  />
+<area shape="rect" coords="286,766,336,815" href="#" alt="3" title="3" onclick="sendButtonPress('3')"   />
+
+<area shape="rect" coords="159,829,209,878" href="#" alt="4" title="4"  onclick="sendButtonPress('4')"  />
+<area shape="rect" coords="224,827,274,876" href="#" alt="5" title="5" onclick="sendButtonPress('5')"   />
+<area shape="rect" coords="289,824,339,873" href="#" alt="6" title="6"  onclick="sendButtonPress('6')"  />
+
+<area shape="rect" coords="160,886,210,935" href="#" alt="7" title="7"  onclick="sendButtonPress('7')"  />
+<area shape="rect" coords="226,882,276,931" href="#" alt="8" title="8"  onclick="sendButtonPress('8')"  />
+<area shape="rect" coords="289,879,339,928" href="#" alt="9" title="9"  onclick="sendButtonPress('9')"  />
+
+<area shape="rect" coords="162,948,212,997" href="#" alt="DOT" title="DOT"  onclick="sendButtonPress('DOT')"  />
+<area shape="rect" coords="227,942,277,991" href="#" alt="0" title="0"  onclick="sendButtonPress('0')"  />
+<area shape="rect" coords="293,939,343,988" href="#" alt="MINUS" title="MINUS"   onclick="sendButtonPress('MINUS')" />
+
+<area shape="rect" coords="362,648,412,697" href="#" alt="A" title="A"  onclick="sendButtonPress('A')"  />
+<area shape="rect" coords="424,645,474,694" href="#" alt="B" title="B"  onclick="sendButtonPress('B')"  />
+<area shape="rect" coords="486,643,536,692" href="#" alt="C" title="C"  onclick="sendButtonPress('C')"  />
+<area shape="rect" coords="545,640,595,689" href="#" alt="D" title="D"  onclick="sendButtonPress('D')"  />
+<area shape="rect" coords="609,639,659,688" href="#" alt="E" title="E"  onclick="sendButtonPress('E')"  />
+
+<area shape="rect" coords="364,704,414,753" href="#" alt="F" title="F"  onclick="sendButtonPress('F')"  />
+<area shape="rect" coords="427,701,477,750" href="#" alt="G" title="G"  onclick="sendButtonPress('G')"  />
+<area shape="rect" coords="488,699,538,748" href="#" alt="H" title="H"  onclick="sendButtonPress('H')"  />
+<area shape="rect" coords="549,696,599,745" href="#" alt="I" title="I"  onclick="sendButtonPress('I')"  />
+<area shape="rect" coords="612,694,662,743" href="#" alt="J" title="J"  onclick="sendButtonPress('J')"  />
+
+<area shape="rect" coords="367,763,417,812" href="#" alt="K" title="K"  onclick="sendButtonPress('K')"  />
+<area shape="rect" coords="430,758,480,807" href="#" alt="L" title="L"  onclick="sendButtonPress('L')"  />
+<area shape="rect" coords="491,758,541,807" href="#" alt="M" title="M"  onclick="sendButtonPress('M')"  />
+<area shape="rect" coords="552,753,602,802" href="#" alt="N" title="N"  onclick="sendButtonPress('N')"  />
+<area shape="rect" coords="615,750,665,799" href="#" alt="O" title="O"  onclick="sendButtonPress('O')"  />
+
+<area shape="rect" coords="368,821,418,870" href="#" alt="P" title="P"  onclick="sendButtonPress('P')"  />
+<area shape="rect" coords="433,817,483,866" href="#" alt="Q" title="Q"  onclick="sendButtonPress('Q')"  />
+<area shape="rect" coords="494,814,544,863" href="#" alt="R" title="R"  onclick="sendButtonPress('R')"  />
+<area shape="rect" coords="555,813,605,862" href="#" alt="S" title="S"  onclick="sendButtonPress('S')"  />
+<area shape="rect" coords="619,808,669,857" href="#" alt="T" title="T"  onclick="sendButtonPress('T')"  />
+
+<area shape="rect" coords="369,877,419,926" href="#" alt="U" title="U"  onclick="sendButtonPress('U')"  />
+<area shape="rect" coords="435,875,485,924" href="#" alt="V" title="V"  onclick="sendButtonPress('V')"  />
+<area shape="rect" coords="498,873,548,922" href="#" alt="W" title="W"  onclick="sendButtonPress('W')"  />
+<area shape="rect" coords="559,871,609,920" href="#" alt="X" title="X"  onclick="sendButtonPress('X')"  />
+<area shape="rect" coords="623,867,673,916" href="#" alt="Y" title="Y"  onclick="sendButtonPress('Y')"  />
+
+<area shape="rect" coords="373,939,423,988" href="#" alt="Z" title="Z"  onclick="sendButtonPress('Z')"  />
+<area shape="rect" coords="438,935,488,984" href="#" alt="SP" title="SP" onclick="sendButtonPress('SP')"   />
+<area shape="rect" coords="499,934,549,983" href="#" alt="DEL" title="DEL"  onclick="sendButtonPress('DEL')"  />
+<area shape="rect" coords="561,929,611,978" href="#" alt="SL" title="SL"  onclick="sendButtonPress('SL')"  />
+<area shape="rect" coords="627,926,677,975" href="#" alt="CLR" title="CLR"  onclick="sendButtonPress('CLR')" />
+
+<area shape="rect" coords="584, 18,640, 80" onclick="toggleNight();" alt="night-view" title="night-view"  />
+
+</map>
+<div id="CDU">
+Waiting for connection
+</div>
+</div>
+</body>
+</html>
